@@ -5,6 +5,11 @@ section.hero
     padding: 2.5rem 2rem;
     margin-inline: auto;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
     & h1
     {
         max-width: 43.5rem;
@@ -38,8 +43,8 @@ section.hero
     & h1 span
     {
         display: block;
-        
-        animation: slideUp 6s infinite ease;
+
+        animation: slideUp 6s 2.6s infinite ease;
     }
 
     & .buttons
@@ -90,6 +95,68 @@ section.hero
             0px 20px 12px rgba(0, 0, 0, 0.05),
             0px 9px 9px rgba(0, 0, 0, 0.09),
             0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    & > div:nth-child(2)
+    {
+        display: block;
+        width: 100%;
+        max-width: 30.5rem;
+        height: 30.5rem;
+
+        & .content
+        {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            & img
+            {
+                position: absolute;
+                width: 100%;
+            }
+
+            & img[src*="Ellipse"]
+            {
+                width: calc(462 / 488 * 100%);
+                top: calc(13 / 488 * 100%);
+                left: calc(13 / 488 * 100%);
+
+                transform: translateX(200%);
+                animation: slideIn 3s 200ms ease forwards;
+            }
+
+            & img[src*="patins"]
+            {
+                z-index: 1;
+
+                transform: translateX(200%);
+                animation: slideIn 3s ease forwards;
+            }
+
+            & img[src*="Stars 1"]
+            {
+                max-width: 5.5rem;
+                top: calc(148 / 488 * 100%);
+                left: calc(8 / 488 * 100%);
+                z-index: 0;
+
+                opacity: 0;
+                transform: translateX(400%);
+                animation: slideIn 2s 800ms ease forwards, appear 100ms 800ms forwards;
+            }
+
+            & img[src*="Stars 2"]
+            {
+                max-width: 2.5rem;
+                top: calc(270 / 488 * 100%);
+                right: calc(2 / 488 * 100%);
+                z-index: 0;
+
+                transform: translateX(400%);
+                animation: slideIn 2s 800ms ease forwards;
+            }
         }
     }
 }
@@ -177,5 +244,26 @@ section.hero
     100%
     {
         transform: translateY(-15rem);
+    }
+}
+
+@keyframes slideIn
+{
+    50%
+    {
+        transform: translateX(-20px);
+    }
+
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear
+{
+    to
+    {
+        opacity: 1;
     }
 }
