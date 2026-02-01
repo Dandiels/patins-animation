@@ -1,8 +1,8 @@
 section.gallery
 {
+    max-width: 22.5rem;
     width: 100%;
-    max-width: 80rem;
-    padding-top: 2.5rem;
+    padding: 1.5rem;
     margin-inline: auto;
 
     & header
@@ -12,14 +12,14 @@ section.gallery
 
     & header span
     {
-        font: 500 var(--text-sm)/1.5 var(--ff-base);
+        font: 500 0.75rem/1.5 var(--ff-base);
         text-transform: uppercase;
         display: block;
     }
 
     & header h2
     {
-        margin: 0.5rem 2rem 0;
+        margin-top: 0.5rem;
     }
 
     & img
@@ -31,13 +31,10 @@ section.gallery
 
     & .content
     {
-        padding: 2rem;
+        margin-top: 1.5rem;
         display: grid;
-        grid-template-areas:
-        "A B B"
-        "C C D";
 
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     & figure
@@ -46,18 +43,9 @@ section.gallery
         border-radius: 2.5rem;
         overflow: hidden;
 
-        animation: image-appear linear backwards;
-        animation-timeline: view();
-        animation-range: 100px 300px;
-
-        &[data-delay]
-        {
-            animation-range: 150px 350px;
-        }
-
         & > img
         {
-            height: 25rem;
+            height: 16rem;
             object-fit: cover;
             transition: scale 500ms;
         }
@@ -73,26 +61,6 @@ section.gallery
             {
                 transform: translateY(0);
             }
-        }
-        
-        &:nth-child(1)
-        {
-            grid-area: A;
-        }
-
-        &:nth-child(2)
-        {
-            grid-area: B;
-        }
-
-        &:nth-child(3)
-        {
-            grid-area: C;
-        }
-
-        &:nth-child(4)
-        {
-            grid-area: D;
         }
     }
 
@@ -127,6 +95,73 @@ section.gallery
             width: 2rem;
             aspect-ratio: 1/1;
             object-fit: cover;
+        }
+    }
+}
+
+@media (width >= 80em)
+{
+    section.gallery
+    {
+        max-width: 80rem;
+        padding: 2.5rem 0 0;
+        
+        & header span
+        {
+            font-size: var(--text-sm);
+        }
+
+        & header h2
+        {
+            margin-inline: 2rem;
+        }
+
+        & .content
+        {
+            margin-top: 0;
+            padding: 2rem;
+
+            grid-template-areas:
+                "A B B"
+                "C C D";
+            gap: 2rem;
+        }
+
+        & figure
+        {
+            animation: image-appear linear backwards;
+            animation-timeline: view();
+            animation-range: 100px 300px;
+
+            &[data-delay]
+            {
+                animation-range: 150px 350px;
+            }
+
+            & > img
+            {
+                height: 25rem;
+            }
+
+            &:nth-child(1)
+            {
+                grid-area: A;
+            }
+
+            &:nth-child(2)
+            {
+                grid-area: B;
+            }
+
+            &:nth-child(3)
+            {
+                grid-area: C;
+            }
+
+            &:nth-child(4)
+            {
+                grid-area: D;
+            }
         }
     }
 }
