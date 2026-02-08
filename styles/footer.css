@@ -21,6 +21,8 @@ footer
 
         font: 700 1.25rem/1.3 'Syne', sans-serif;
 
+        width: fit-content;
+
         cursor: pointer;
 
         /* Ícone da logo. */
