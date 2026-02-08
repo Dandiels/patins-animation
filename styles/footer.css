@@ -53,6 +53,8 @@ footer
             width: fit-content;
             position: relative;
 
+            cursor: default;
+
             /* Exibe sublinhado animado no hover. */
             &:hover::after
             {
@@ -97,6 +99,8 @@ footer
 
             border-radius: 5rem;
             position: relative;
+
+            cursor: default;
 
             /* Exibe o fundo animado no hover. */
             &:hover::before

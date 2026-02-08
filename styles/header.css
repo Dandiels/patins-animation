@@ -39,6 +39,8 @@ header.top
     a
     {
         position: relative;
+
+        cursor: default;
     }
 
     /* Badge de quantidade no carrinho. */
