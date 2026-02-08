@@ -1,14 +1,18 @@
+/* Rodapé da página. */
 footer
 {
+    /* Limita a largura e centraliza o footer. */
     max-width: 22.5rem;
     width: 100%;
     padding: 3rem 1.5rem 1.5rem;
     margin-inline: auto;
 
+    /* Layout em coluna no mobile. */
     display: flex;
     flex-direction: column;
     gap: 3rem;
 
+    /* Logo do footer. */
     & .logo
     {
         display: flex;
@@ -19,12 +23,14 @@ footer
 
         cursor: pointer;
 
+        /* Ícone da logo. */
         & img
         {
             width: 2rem;
             height: 2rem;
             display: block;
 
+            /* Animação de rotação no hover. */
             transition: rotate 300ms ease-out;
 
             &:hover
@@ -34,17 +40,20 @@ footer
         }
     }
 
+    /* Navegação do rodapé. */
     & nav
     {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
 
+        /* Links do menu. */
         & a
         {
             width: fit-content;
             position: relative;
 
+            /* Exibe sublinhado animado no hover. */
             &:hover::after
             {
                 opacity: 1;
@@ -52,6 +61,7 @@ footer
             }
         }
 
+        /* Linha decorativa animada abaixo dos links. */
         & a::after
         {
             content: "";
@@ -63,6 +73,7 @@ footer
             bottom: 0;
             left: 0;
 
+            /* Estado inicial invisível. */
             opacity: 0;
             transform: scaleX(0);
 
@@ -70,6 +81,7 @@ footer
         }
     }
 
+    /* Links de redes sociais. */
     & .social-links
     {
         display: flex;
@@ -84,20 +96,22 @@ footer
             justify-content: center;
 
             border-radius: 5rem;
-
             position: relative;
 
+            /* Exibe o fundo animado no hover. */
             &:hover::before
             {
                 scale: 1;
             }
 
+            /* Ícone da rede social. */
             & img
             {
                 width: 1.5rem;
                 height: 1.5rem;
             }
 
+            /* Fundo circular animado. */
             &::before
             {
                 content: "";
@@ -109,11 +123,12 @@ footer
                 background: var(--snitap-sun);
 
                 position: absolute;
-
                 top: 0;
                 left: 0;
+
                 z-index: -1;
 
+                /* Inicialmente oculto. */
                 scale: 0;
                 transition: scale 200ms;
             }
@@ -121,6 +136,7 @@ footer
     }
 }
 
+/* Layout do footer em telas grandes (desktop). */
 @media (width >= 80em)
 {
     footer
@@ -128,11 +144,13 @@ footer
         max-width: 80rem;
         padding: 4rem 2rem 2rem;
 
+        /* Distribui os elementos horizontalmente. */
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         gap: 0;
 
+        /* Navegação em linha no desktop. */
         & nav
         {
             flex-direction: row;

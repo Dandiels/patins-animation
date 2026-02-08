@@ -1,24 +1,30 @@
+/* Seção de banner animado com rolagem horizontal contínua. */
 .banner
 {
+    /* Ocupa toda a largura da viewport. */
     width: 100%;
     padding-block: 1.5rem;
     overflow: hidden;
 
+    /* Container responsável por mascarar a rolagem. */
     & .scroller
     {
         width: 100%;
         overflow: hidden;
         padding-block: 1rem;
 
+        /* Faixa que se move horizontalmente. */
         & .rolling
         {
             display: flex;
             gap: 1.5rem;
 
+            /* Animação contínua de deslocamento lateral. */
             animation: rolling 2s linear infinite;
         }
     }
 
+    /* Fundo com gradiente animado. */
     & .bg-gradient-animate
     {
         background: linear-gradient(
@@ -26,29 +32,37 @@
             var(--snitap-joy-light) 0%,
             var(--snitap-sky-light) 100%
         );
+
+        /* Gradiente maior que o container para permitir animação. */
         background-size: 400%;
         background-position: 0 50%;
 
+        /* Animação suave de transição do gradiente. */
         animation: bg-gradient 20s ease infinite;
     }
 }
 
+/* Animação de rolagem horizontal dos banners. */
 @keyframes rolling
 {
     to
     {
+        /* Desloca os elementos para a esquerda criando efeito infinito. */
         transform: translateX(-133px);
     }
 }
 
+/* Animação do gradiente de fundo. */
 @keyframes bg-gradient
 {
     50%
     {
+        /* Move o gradiente horizontalmente. */
         background-position: 100% 50%;
     }
 }
 
+/* Ajustes de espaçamento para telas grandes. */
 @media (width >= 80em)
 {
     .banner

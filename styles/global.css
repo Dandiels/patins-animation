@@ -1,3 +1,7 @@
+/*
+  Reset global.
+  Remove margens e paddings padrões e garante box model consistente.
+*/
 *,
 *::after,
 *::before
@@ -7,8 +11,13 @@
     box-sizing: border-box;
 }
 
+/*
+  Variáveis globais do projeto.
+  Cores da identidade visual, tipografia e escalas de texto.
+*/
 :root
 {
+    /* Paleta de cores. */
     --snitap-sun: #FFCD1E;
     --snitap-sky-mid: #06B6D4;
     --snitap-sky-light: #67E8F9;
@@ -16,49 +25,67 @@
     --snitap-joy-light: #F472B6;
     --snitap-leaf-mid: #16A34A;
 
+    /* Fonte base. */
     --ff-base: 'Montserrat', sans-serif;
 
+    /* Escala tipográfica. */
     --text-sm: 0.875rem;
     --text-lg: 1.5rem;
     --text-xl: 2rem;
 }
 
+/*
+  Configuração base de tipografia.
+  Aplicada ao HTML e a elementos interativos como botões.
+*/
 html,
 button
 {
     font: 500 1rem/1.5 var(--ff-base);
 }
 
+/* Estilos globais do body. */
 body
 {
     color: #000000;
     background-color: #FAFAFA;
 }
 
+/*
+  Tipografia dos títulos.
+  Fonte diferenciada para hierarquia visual.
+*/
 h1,
 h2
 {
     font-family: 'Syne', sans-serif;
 }
 
+/* Estilo do título principal. */
 h1
 {
     font-size: var(--text-xl);
     line-height: 1.25;
 }
 
+/* Estilo dos subtítulos. */
 h2
 {
     font-size: var(--text-lg);
     line-height: 1.2;
 }
 
+/*
+  Reset de links.
+  Remove sublinhado e herda cor do contexto.
+*/
 a
 {
     color: inherit;
     text-decoration: none;
 }
 
+/* Ajustes tipográficos para telas grandes (desktop). */
 @media (width >= 80em)
 {
     :root

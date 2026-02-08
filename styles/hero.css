@@ -1,15 +1,19 @@
+/* Seção hero — área principal de destaque da landing page. */
 section.hero
 {
+    /* Limita largura e centraliza o conteúdo. */
     max-width: 22.5rem;
     width: 100%;
     padding: 1rem 1.5rem 3rem;
     margin-inline: auto;
 
+    /* Layout em coluna no mobile, com imagem abaixo do texto. */
     display: flex;
     flex-direction: column-reverse;
     gap: 2rem;
     overflow: hidden;
     
+    /* Container das palavras animadas no título. */
     & h1 div
     {
         display: inline-block;
@@ -19,6 +23,7 @@ section.hero
         vertical-align: bottom;
     }
 
+    /* Cores específicas para cada palavra animada. */
     & h1 span:nth-child(1),
     & h1 span:nth-child(4)
     {
@@ -35,13 +40,14 @@ section.hero
         color: var(--snitap-leaf-mid);
     }
 
+    /* Cada palavra ocupa uma linha para permitir o efeito de slide. */
     & h1 span
     {
         display: block;
-
-        animation: slideUpMobile 6s infinite ease;
+        animation: slideUp 6s infinite ease;
     }
 
+    /* Grupo de botões do hero. */
     & .buttons
     {
         display: flex;
@@ -50,6 +56,7 @@ section.hero
         gap: 1.5rem;
         margin-top: 3rem;
 
+        /* Estilo base dos botões. */
         & .button
         {
             display: flex;
@@ -58,12 +65,14 @@ section.hero
 
             border-radius: 5rem;
 
+            /* Botão principal de compra. */
             &.buy
             {
                 padding: 1.5rem 3rem;
                 background-color: var(--snitap-sun);           
             }
 
+            /* Botão de vídeo/play. */
             &.play span
             {
                 display: flex;
@@ -73,15 +82,18 @@ section.hero
             }
         }
 
+        /* Sombra aplicada a botões e ícones. */
         & .shadow
         {
-            box-shadow: 0px 36px 15px rgba(0, 0, 0, 0.01),
+            box-shadow:
+            0px 36px 15px rgba(0, 0, 0, 0.01),
             0px 20px 12px rgba(0, 0, 0, 0.05),
             0px 9px 9px rgba(0, 0, 0, 0.09),
             0px 2px 5px rgba(0, 0, 0, 0.1);
         }
     }
 
+    /* Container da imagem principal do hero. */
     & > div:nth-child(2)
     {
         display: block;
@@ -89,6 +101,7 @@ section.hero
         max-width: 19.5rem;
         height: 19.5rem;
 
+        /* Contexto para posicionamento absoluto das imagens. */
         & .content
         {
             width: 100%;
@@ -101,6 +114,7 @@ section.hero
                 width: 100%;
             }
 
+            /* Elipse de fundo. */
             & img[src*="Ellipse"]
             {
                 width: calc(295.38 / 312 * 100%);
@@ -108,11 +122,13 @@ section.hero
                 left: calc(8.31 / 312 * 100%);
             }
 
+            /* Imagem principal dos patins. */
             & img[src*="patins"]
             {
                 z-index: 1;
             }
 
+            /* Estrela decorativa 1. */
             & img[src*="Stars 1"]
             {
                 max-width: 3.503125rem;
@@ -122,6 +138,7 @@ section.hero
                 z-index: 0;
             }
 
+            /* Estrela decorativa 2. */
             & img[src*="Stars 2"]
             {
                 max-width: 1.598125rem;
@@ -134,7 +151,8 @@ section.hero
     }
 }
 
-@keyframes slideUpMobile
+/* Animação de troca de palavras (mobile). */
+@keyframes slideUp
 {
     0%,
     22%
@@ -220,10 +238,12 @@ section.hero
     }
 }
 
+/* Ajustes e animações específicas para desktop. */
 @media (width >= 80em)
 {
     section.hero
     {
+        /* Layout em linha no desktop. */
         max-width: 80rem;
         padding: 2.5rem 2rem;
 
@@ -237,16 +257,19 @@ section.hero
             max-width: 43.5rem;
         }
 
+        /* Área visível maior para animação do texto. */
         & h1 div
         {
             height: 5rem;
         }
 
+        /* Reutiliza a mesma animação com atraso no desktop. */
         & h1 span
         {
-            animation: slideUpDesktop 6s 2.6s infinite ease;
+            animation: slideUp 6s 2.6s infinite ease;
         }
 
+        /* Botões em linha no desktop. */
         & .buttons
         {
             flex-direction: row;
@@ -273,6 +296,7 @@ section.hero
             }
         }
 
+        /* Container da imagem maior no desktop. */
         & > div:nth-child(2)
         {
             max-width: 30.5rem;
@@ -280,6 +304,7 @@ section.hero
 
             & .content
             {
+                /* Animações de entrada das imagens. */
                 & img[src*="Ellipse"]
                 {
                     width: calc(462 / 488 * 100%);
@@ -299,7 +324,6 @@ section.hero
                 & img[src*="Stars 1"]
                 {
                     max-width: 5.5rem;
-                    max-height: initial;
                     top: calc(148 / 488 * 100%);
                     left: calc(8 / 488 * 100%);
 
@@ -311,7 +335,6 @@ section.hero
                 & img[src*="Stars 2"]
                 {
                     max-width: 2.5rem;
-                    max-height: initial;
                     top: calc(270 / 488 * 100%);
                     right: calc(2 / 488 * 100%);
 
@@ -321,111 +344,114 @@ section.hero
             }
         }
     }
-}
 
-@keyframes slideUpDesktop
-{
-    0%,
-    22%
+    /* Versão da animação slideUp adaptada para alturas maiores. */
+    @keyframes slideUp
     {
-        transform: translateY(0);
+        0%,
+        22%
+        {
+            transform: translateY(0);
+        }
+
+        23%
+        {
+            transform: translateY(calc(-5rem - 15px));
+        }
+
+        25%
+        {
+            transform: translateY(calc(-5rem + 10px));
+        }
+
+        27%
+        {
+            transform: translateY(calc(-5rem - 5px));
+        }
+
+        29%
+        {
+            transform: translateY(calc(-5rem + 5px));
+        }
+
+        33%,
+        55%
+        {
+            transform: translateY(-5rem);
+        }
+
+        56%
+        {
+            transform: translateY(calc(-10rem - 15px));
+        }
+
+        58%
+        {
+            transform: translateY(calc(-10rem + 10px));
+        }
+
+        60%
+        {
+            transform: translateY(calc(-10rem - 5px));
+        }
+
+        62%
+        {
+            transform: translateY(calc(-10rem + 5px));
+        }
+
+        66%,
+        88%
+        {
+            transform: translateY(-10rem);
+        }
+
+        89%
+        {
+            transform: translateY(calc(-15rem - 15px));
+        }
+
+        91%
+        {
+            transform: translateY(calc(-15rem + 10px));
+        }
+
+        93%
+        {
+            transform: translateY(calc(-15rem - 5px));
+        }
+
+        95%
+        {
+            transform: translateY(calc(-15rem + 5px));
+        }
+
+        100%
+        {
+            transform: translateY(-15rem);
+        }
     }
 
-    23%
+    /* Animação de entrada horizontal. */
+    @keyframes slideIn
     {
-        transform: translateY(calc(-5rem - 15px));
+        50%
+        {
+            transform: translateX(-20px);
+        }
+
+        100%
+        {
+            transform: translateX(0);
+        }
     }
 
-    25%
+    /* Animação de fade-in. */
+    @keyframes appear
     {
-        transform: translateY(calc(-5rem + 10px));
-    }
-
-    27%
-    {
-        transform: translateY(calc(-5rem - 5px));
-    }
-
-    29%
-    {
-        transform: translateY(calc(-5rem + 5px));
-    }
-
-    33%,
-    55%
-    {
-        transform: translateY(-5rem);
-    }
-
-    56%
-    {
-        transform: translateY(calc(-10rem - 15px));
-    }
-
-    58%
-    {
-        transform: translateY(calc(-10rem + 10px));
-    }
-
-    60%
-    {
-        transform: translateY(calc(-10rem - 5px));
-    }
-
-    62%
-    {
-        transform: translateY(calc(-10rem + 5px));
-    }
-
-    66%,
-    88%
-    {
-        transform: translateY(-10rem);
-    }
-
-    89%
-    {
-        transform: translateY(calc(-15rem - 15px));
-    }
-
-    91%
-    {
-        transform: translateY(calc(-15rem + 10px));
-    }
-
-    93%
-    {
-        transform: translateY(calc(-15rem - 5px));
-    }
-
-    95%
-    {
-        transform: translateY(calc(-15rem + 5px));
-    }
-
-    100%
-    {
-        transform: translateY(-15rem);
-    }
-}
-
-@keyframes slideIn
-{
-    50%
-    {
-        transform: translateX(-20px);
-    }
-
-    100%
-    {
-        transform: translateX(0);
-    }
-}
-
-@keyframes appear
-{
-    to
-    {
-        opacity: 1;
+        to
+        {
+            opacity: 1;
+        }
     }
 }

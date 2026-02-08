@@ -1,15 +1,19 @@
+/* Seção de galeria de imagens. */
 section.gallery
 {
+    /* Limita a largura da seção e centraliza na página. */
     max-width: 22.5rem;
     width: 100%;
     padding: 1.5rem;
     margin-inline: auto;
 
+    /* Cabeçalho da galeria. */
     & header
     {
         text-align: center;
     }
 
+    /* Texto auxiliar acima do título. */
     & header span
     {
         font: 500 0.75rem/1.5 var(--ff-base);
@@ -17,11 +21,13 @@ section.gallery
         display: block;
     }
 
+    /* Título da galeria. */
     & header h2
     {
         margin-top: 0.5rem;
     }
 
+    /* Imagens responsivas. */
     & img
     {
         width: 100%;
@@ -29,20 +35,22 @@ section.gallery
         display: block;
     }
 
+    /* Container das imagens. */
     & .content
     {
         margin-top: 1.5rem;
         display: grid;
-
         gap: 1.5rem;
     }
 
+    /* Card individual da galeria. */
     & figure
     {
         position: relative;
         border-radius: 2.5rem;
         overflow: hidden;
 
+        /* Imagem principal do card. */
         & > img
         {
             height: 16rem;
@@ -50,13 +58,16 @@ section.gallery
             transition: scale 500ms;
         }
 
+        /* Interações ao passar o mouse. */
         &:hover
         {
+            /* Zoom suave da imagem. */
             & > img
             {
                 scale: 1.1;
             }
 
+            /* Exibe a legenda. */
             & figcaption
             {
                 transform: translateY(0);
@@ -64,6 +75,7 @@ section.gallery
         }
     }
 
+    /* Legenda da imagem. */
     & figcaption
     {
         display: flex;
@@ -80,9 +92,11 @@ section.gallery
 
         padding: 1.5rem 2rem;
 
+        /* Inicialmente escondida abaixo da imagem. */
         transform: translateY(100%);
         transition: transform 500ms;
 
+        /* Gradiente para garantir contraste do texto. */
         background: linear-gradient(
             180deg,
             rgba(0, 0, 0, 0) 0%,
@@ -90,6 +104,7 @@ section.gallery
             rgba(0, 0, 0, 0.64) 100%
         );
 
+        /* Avatar do usuário. */
         & > img
         {
             width: 2rem;
@@ -99,6 +114,7 @@ section.gallery
     }
 }
 
+/* Ajustes e animações para telas grandes (desktop). */
 @media (width >= 80em)
 {
     section.gallery
@@ -106,16 +122,19 @@ section.gallery
         max-width: 80rem;
         padding: 2.5rem 0 0;
         
+        /* Ajuste do texto auxiliar. */
         & header span
         {
             font-size: var(--text-sm);
         }
 
+        /* Margem lateral do título. */
         & header h2
         {
             margin-inline: 2rem;
         }
 
+        /* Grid mais complexo no desktop. */
         & .content
         {
             margin-top: 0;
@@ -127,22 +146,26 @@ section.gallery
             gap: 2rem;
         }
 
+        /* Animação de entrada das imagens baseada no scroll. */
         & figure
         {
             animation: image-appear linear backwards;
             animation-timeline: view();
             animation-range: 100px 300px;
 
+            /* Atraso adicional para alguns cards. */
             &[data-delay]
             {
                 animation-range: 150px 350px;
             }
 
+            /* Imagens maiores no desktop. */
             & > img
             {
                 height: 25rem;
             }
 
+            /* Mapeamento das áreas do grid. */
             &:nth-child(1)
             {
                 grid-area: A;
@@ -164,12 +187,13 @@ section.gallery
             }
         }
     }
-}
 
-@keyframes image-appear
-{
-    from
+    /* Animação de entrada vertical das imagens. */
+    @keyframes image-appear
     {
-        transform: translateY(100%);
+        from
+        {
+            transform: translateY(100%);
+        }
     }
 }

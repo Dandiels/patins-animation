@@ -1,75 +1,97 @@
 <!DOCTYPE html>
+<!-- Declaração do documento HTML5 -->
 <html lang="pt-BR">
 
   <head>
 
+    <!-- Pré-conexão com Google Fonts para melhor performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Metadados essenciais -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da página -->
     <title>Snitap Patins</title>
 
+    <!-- Arquivo principal de estilos -->
     <link rel="stylesheet" href="styles/index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Montserrat:ital,wght@0,500;1,500&family=Syne:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Fontes utilizadas no projeto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Montserrat:ital,wght@0,500;1,500&family=Syne:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
   </head>
 
   <body>
 
+    <!-- Cabeçalho superior com logo e carrinho -->
     <header class="top">
 
+      <!-- Logo da marca -->
       <a href="#">
         <img src="assets/icons/Logo.svg" alt="Logo Snitap Patins" />
       </a>
 
+      <!-- Ícone do carrinho de compras com contador -->
       <a href="#">
 
         <img src="assets/icons/shopping-bag-01.svg" alt="Ícone de Bolsa de Compras" />
         <span>1</span>
-        
+
       </a>
 
     </header>
 
+    <!-- Seção Hero: destaque principal da landing page -->
     <section class="hero">
 
+      <!-- Conteúdo textual do hero -->
       <div>
 
+        <!-- Título principal com palavras animadas -->
         <h1>
           Snitap, sua vida mais
           <div>
 
+            <!-- Palavras que se alternam via animação -->
             <span>radical</span>
             <span>divertida</span>
             <span>saudável</span>
             <span>radical</span>
-            
+
           </div>
         </h1>
 
+        <!-- Botões de ação -->
         <div class="buttons">
 
+          <!-- Botão de compra -->
           <a href="#" class="button buy shadow">
             <img src="assets/icons/shopping-bag-01.svg" alt="Ícone de Bolsa de Compras" />
             COMPRAR AGORA
           </a>
 
+          <!-- Botão de demonstração -->
           <a href="#" class="button play">
             <span class="shadow">
               <img src="assets/icons/play.svg" alt="Ícone de Play" />
             </span>
             VEJA EM AÇÃO
           </a>
-        
+
         </div>
 
       </div>
 
-
+      <!-- Conteúdo visual do hero -->
       <div>
         <div class="content">
 
+          <!-- Elementos gráficos e imagem principal -->
           <img src="assets/hero/Ellipse.svg" alt="Imagem de Ellipse" />
           <img src="assets/hero/patins-image.png" alt="Imagem de Patins" />
           <img src="assets/hero/Stars 1.svg" alt="Imagem de Estrelas 1" />
@@ -80,10 +102,12 @@
 
     </section>
 
+    <!-- Seção de banner animado com rolagem contínua -->
     <section class="banner">
       <div class="scroller bg-gradient-animate">
         <div class="rolling">
 
+          <!-- Repetição do banner para efeito de rolagem infinita -->
           <img src="assets/icons/banner.svg" alt="Banner Snitap Patins" />
           <img src="assets/icons/banner.svg" alt="Banner Snitap Patins" />
           <img src="assets/icons/banner.svg" alt="Banner Snitap Patins" />
@@ -108,8 +132,10 @@
       </div>
     </section>
 
+    <!-- Seção de galeria de fotos -->
     <section class="gallery">
 
+      <!-- Cabeçalho da galeria -->
       <header>
 
         <span>GALERIA DE FOTOS</span>
@@ -117,12 +143,15 @@
 
       </header>
 
+      <!-- Conteúdo da galeria -->
       <div class="content">
 
+        <!-- Item da galeria -->
         <figure>
 
           <img src="assets/images/image 01.png" alt="Imagem 1 da Galeria" />
 
+          <!-- Legenda com usuário -->
           <figcaption>
 
             <img src="assets/images/insta pic.png" alt="Foto de Perfil do Instagram" />
@@ -132,6 +161,7 @@
 
         </figure>
 
+        <!-- Item da galeria com atraso de animação -->
         <figure data-delay>
 
           <img src="assets/images/image 02.png" alt="Imagem 2 da Galeria" />
@@ -145,6 +175,7 @@
 
         </figure>
 
+        <!-- Item da galeria -->
         <figure>
 
           <img src="assets/images/image 03.png" alt="Imagem 3 da Galeria" />
@@ -158,6 +189,7 @@
 
         </figure>
 
+        <!-- Item da galeria com atraso de animação -->
         <figure data-delay>
 
           <img src="assets/images/image 04.png" alt="Imagem 4 da Galeria" />
@@ -175,21 +207,25 @@
 
     </section>
 
+    <!-- Rodapé da página -->
     <footer>
 
+      <!-- Logo e nome da marca -->
       <div class="logo">
         <img src="assets/icons/Logo.svg" alt="Logo Snitap Patins" />
         Snitap
       </div>
 
+      <!-- Navegação do rodapé -->
       <nav>
 
         <a href="#">Sobre</a>
         <a href="#">Nossas lojas</a>
         <a href="#">Política de privacidade</a>
-      
+        
       </nav>
 
+      <!-- Links para redes sociais -->
       <div class="social-links">
 
         <a href="#" title="Instagram">
@@ -211,7 +247,7 @@
       </div>
 
     </footer>
-    
+
   </body>
 
 </html>
