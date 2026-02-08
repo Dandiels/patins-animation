@@ -65,6 +65,8 @@ section.hero
 
             border-radius: 5rem;
 
+            cursor: default;
+
             /* Botão principal de compra. */
             &.buy
             {
